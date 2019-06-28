@@ -9,6 +9,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import HelloWorld from '@/components/HelloWorld.vue'
+import * as util from '@/common/util'
 // import a from 'typings/globals'
 // Vue.test
 export default Vue.extend({
@@ -20,12 +21,12 @@ export default Vue.extend({
         test() {
             api.openTabLayout({
                 name: 'help',
-                url: 'widget://pages/member/index.html',
+                url: `${util.host}pages/member/index.html`,
                 title: '帮助',
                 hideNavigationBar: false,
                 navigationBar: {
-                    background: 'red',
-                    color: '#fff'
+                    // background: 'red',
+                    // color: '#fff'
                     // leftButtons: [
                     //     {
                     //         iconPath: 'widget://image/back.png'
