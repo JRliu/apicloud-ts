@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="A6933216237889" version="0.0.1">
+    <name>屁屁</name>
+    <description/>
+    <author email="pipi@126.com" href="http://www.apicloud.com">pipi</author>
+
+    <!-- <content src="./html/home/index.html"/> -->
+    <content src="http://192.168.0.101:8080/pages/login/index.html"/>
+
+    <preference name="appBackground" value="rgba(0,0,0,0)"/>
+    <preference name="windowBackground" value="#ffffff"/>
+    <preference name="frameBackgroundColor" value="#ffffff"/>
+
+    <!-- 自动检测更新  -->
+    <preference name="autoUpdate" value="true"/>
+    <!-- 增量更新、云修复   -->
+    <preference name="smartUpdate" value="true"/>
+    <!-- debug模式  -->
+    <preference name="debug" value="true"/>
+    <!-- frame页面弹动 -->
+    <preference name="pageBounce" value="true" />
+    <!-- 沉浸式状态栏 -->
+    <preference name="statusBarAppearance" value="true"/>
+    <!-- 修复iOS10中无法恢复推送 -->
+    <preference name="backgroundMode" value="remote-notification"/>
+    <!-- 取消自动关闭启动页  -->
+    <preference name="autoLaunch" value="false"/>
+    <!-- 安卓https -->
+    <preference name="checkSslTrusted" value="false" />
+    <!-- urlScheme -->
+    <preference name="urlScheme" value="yelecustomer" />
+    <!-- 是否显示键盘上方的工具条 -->
+    <preference name="softInputBarEnabled" value="false" />
+
+    <!-- 配置可被检测的URL Scheme -->
+    <preference name="querySchemes" value="weixin,wechat,sinaweibo,sinaweibohd,mqqapi,mqq,baidumap,iosamap,alipay,alipays,yelesales" />
+    <!-- 下拉刷新样式  -->
+    <!-- 系统权限  -->
+    <permission name="location"/>
+    <permission name="internet"/>
+    <permission name="contact"/>
+
+    <access origin="*"/>
+</widget>
