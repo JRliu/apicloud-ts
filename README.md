@@ -1,5 +1,9 @@
 # apicloud-staging
 
+## TODO
+- [ ] cli 新建组件
+- [ ] cli发布？
+
 ## Project setup
 ```
 // 基于vue-cli，请先全局安装vue-cli：
