@@ -2,7 +2,14 @@
 
 ## Project setup
 ```
-yarn install
+// 基于vue-cli，请先全局安装vue-cli：
+yarn global add @vue/cli
+
+// 安装apicloud-cli:
+yarn global add apicloud-cli
+
+// 安装本项目的依赖
+yarn
 ```
 
 ### Compiles and hot-reloads for development
@@ -13,11 +20,6 @@ yarn run serve
 ### Compiles and minifies for production
 ```
 yarn run build
-```
-
-### Run your tests
-```
-yarn run test
 ```
 
 ### Lints and fixes files
