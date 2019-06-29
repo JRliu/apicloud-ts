@@ -1,0 +1,8 @@
+{
+    "[vue]": {
+        "editor.formatOnSave": true
+    },
+    "eslint.autoFixOnSave": true,
+    "vetur.format.options.tabSize": 4,
+    "vetur.format.defaultFormatter.html": "prettier"
+}
