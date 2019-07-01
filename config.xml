@@ -6,7 +6,7 @@
     <author email="pipi@126.com" href="http://www.apicloud.com">pipi</author>
 
     <!-- <content src="./html/home/index.html"/> -->
-    <content src="http://192.168.50.49:8080/pages/login/index.html"/>
+    <content src="http://192.168.0.101:8080/pages/test/Demo.html"/>
 
     <preference name="appBackground" value="rgba(0,0,0,0)"/>
     <preference name="windowBackground" value="#ffffff"/>

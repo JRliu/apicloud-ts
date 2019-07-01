@@ -7,4 +7,4 @@ export function isProduction() {
     return env === 'production'
 }
 
-export const host = isProduction() ? 'widget://' : 'http://192.168.50.49:8080/'
+export const host = isProduction() ? 'widget://' : 'http://192.168.0.101:8080/'

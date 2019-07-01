@@ -1,0 +1,11 @@
+<!--
+ * ${componentName}
+ * @author ${username}
+ * @date ${curDate}
+ -->
+<template>
+    <div>
+        <h1>${componentName}</h1>
+    </div>
+</template>
+<style src="./${componentName}.scss" lang="scss" scoped></style>

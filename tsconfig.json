@@ -9,6 +9,7 @@
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "sourceMap": true,
+        "experimentalDecorators": true,
         "baseUrl": ".",
         "types": ["webpack-env"],
         "paths": {
@@ -25,5 +26,5 @@
         "tests/**/*.tsx",
         "typings/**/*.ts"
     ],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "cli"]
 }

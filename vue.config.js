@@ -1,6 +1,8 @@
 const glob = require('glob')
 const shelljs = require('shelljs')
 const fs = require('fs')
+const path = require('path')
+const _ = require('lodash')
 
 function getEntry() {
     let globPath = 'src/**/index.ts'
@@ -30,8 +32,8 @@ function shell(code) {
     shelljs.exec(code, { stdio: 'inherit' })
 }
 
-function flatten(arr) {
-    return arr.reduce((prev, curr) => prev.concat(curr), [])
+function resolve(dir) {
+    return path.join(__dirname, dir)
 }
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -93,5 +95,33 @@ module.exports = {
             }
         ]
     },
-    chainWebpack: config => {}
+    chainWebpack: config => {
+        // ts 文件提升到最高
+        config.resolve.extensions
+            .prepend('.js')
+            .prepend('.ts')
+            .prepend('.tsx')
+
+        // scss 模块
+        let includePaths = [resolve('./src/style'), resolve('./node_modules')]
+        config.module
+            .rule('scss')
+            .oneOf('normal')
+            .use('sass-loader')
+            .tap(options => {
+                return _.merge(options, {
+                    includePaths
+                })
+            })
+
+        config.module
+            .rule('scss')
+            .oneOf('vue')
+            .use('sass-loader')
+            .tap(options => {
+                return _.merge(options, {
+                    includePaths
+                })
+            })
+    }
 }

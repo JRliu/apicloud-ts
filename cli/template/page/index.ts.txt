@@ -1,0 +1,12 @@
+/**
+ * ${componentName}
+ * @author ${username}
+ * @date ${curDate}
+ */
+
+import Vue from '@/components/base'
+import App from './${componentName}'
+
+new Vue({
+    render: h => h(App)
+}).$mount('#app')
