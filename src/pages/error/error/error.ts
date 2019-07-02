@@ -13,33 +13,33 @@ import template from './error.vue'
     mixins: [template]
 })
 export default class error extends Vue {
-    //#region datas ******************************/
-    //#endregion datas ***************************/
+    // #region datas ******************************/
+    // #endregion datas ***************************/
 
-    //#region props ******************************/
-    //#endregion props ***************************/
+    // #region props ******************************/
+    // #endregion props ***************************/
 
-    //#region vuex *******************************/
-    //#endregion vuex ****************************/
+    // #region vuex *******************************/
+    // #endregion vuex ****************************/
 
-    //#region computed ***************************/
-    //#endregion computed ************************/
+    // #region computed ***************************/
+    // #endregion computed ************************/
 
-    //#region watchers ***************************/
-    //#endregion watchers ************************/
+    // #region watchers ***************************/
+    // #endregion watchers ************************/
 
-    //#region life cycle *************************/
+    // #region life cycle *************************/
     protected created() {
         alert('error')
     }
-    //#endregion life cycle **********************/
+    // #endregion life cycle **********************/
 
-    //#region hooks ******************************/
-    //#endregion hooks ***************************/
+    // #region hooks ******************************/
+    // #endregion hooks ***************************/
 
-    //#region event handler **********************/
-    //#endregion event handler *******************/
+    // #region event handler **********************/
+    // #endregion event handler *******************/
 
-    //#region methods ****************************/
-    //#endregion methods *************************/
+    // #region methods ****************************/
+    // #endregion methods *************************/
 }

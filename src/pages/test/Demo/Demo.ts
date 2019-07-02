@@ -20,35 +20,35 @@ import Avatar from '@/components/Avatar'
     }
 })
 export default class Demo extends Vue {
-    //#region datas ******************************/
+    // #region datas ******************************/
     protected name = 'mike'
-    //#endregion datas ***************************/
+    // #endregion datas ***************************/
 
-    //#region props ******************************/
-    //#endregion props ***************************/
+    // #region props ******************************/
+    // #endregion props ***************************/
 
-    //#region vuex *******************************/
-    //#endregion vuex ****************************/
+    // #region vuex *******************************/
+    // #endregion vuex ****************************/
 
-    //#region computed ***************************/
-    //#endregion computed ************************/
+    // #region computed ***************************/
+    // #endregion computed ************************/
 
-    //#region watchers ***************************/
-    //#endregion watchers ************************/
+    // #region watchers ***************************/
+    // #endregion watchers ************************/
 
-    //#region life cycle *************************/
+    // #region life cycle *************************/
     protected created() {
         console.log('created')
     }
-    //#endregion life cycle **********************/
+    // #endregion life cycle **********************/
 
-    //#region hooks ******************************/
-    //#endregion hooks ***************************/
+    // #region hooks ******************************/
+    // #endregion hooks ***************************/
 
-    //#region event handler **********************/
-    //#endregion event handler *******************/
+    // #region event handler **********************/
+    // #endregion event handler *******************/
 
-    //#region methods ****************************/
+    // #region methods ****************************/
     protected test() {
         api.openTabLayout({
             name: 'help',
@@ -67,5 +67,5 @@ export default class Demo extends Vue {
         })
     }
 
-    //#endregion methods *************************/
+    // #endregion methods *************************/
 }
