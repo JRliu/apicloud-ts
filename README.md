@@ -34,7 +34,7 @@ yarn dev
 ```
 
 ## directory structure
-
+```dir
 ├── README.md
 ├── babel.config.js
 ├── cli
@@ -58,28 +58,15 @@ yarn dev
 │   ├── css
 │   │   ├── 0.9dd719f2.css
 │   │   ├── 1.9dd719f2.css
-│   │   ├── 2.c7b34b26.css
-│   │   └── 3.c7b34b26.css
 │   ├── index.html
 │   ├── js
-│   │   ├── 0.4bbb26e8.js
-│   │   ├── 0.4bbb26e8.js.map
-│   │   ├── 1.b853cccb.js
-│   │   ├── 1.b853cccb.js.map
-│   │   ├── 2.ae89e85b.js
-│   │   ├── 2.ae89e85b.js.map
 │   │   ├── 3.81061d83.js
 │   │   ├── 3.81061d83.js.map
 │   │   ├── chunk-vendors.7a32d01e.js
 │   │   └── chunk-vendors.7a32d01e.js.map
 │   └── pages
-│       ├── error
-│       │   └── error.html
-│       ├── login
-│       │   └── index.html
-│       └── member
-│           ├── coupon.html
-│           └── index.html
+│       └── test
+│           └── Demo.html
 ├── output.js
 ├── package.json
 ├── postcss.config.js
@@ -100,12 +87,6 @@ yarn dev
 │   │   └── base.ts
 │   ├── main.ts
 │   ├── pages   // 存放页面，注意组件不要放进这个文件夹，组件请放 src/components
-│   │   ├── error
-│   │   │   └── error
-│   │   │       ├── error.scss
-│   │   │       ├── error.ts
-│   │   │       ├── error.vue
-│   │   │       └── index.ts
 │   │   └── test
 │   │       └── Demo
 │   │           ├── Demo.scss
@@ -123,7 +104,7 @@ yarn dev
 ├── vue.config.js  // vue-cli配置文件，可自行根据实际情况修改
 ├── yarn-error.log
 └── yarn.lock
-
+```
 
 ### cli
 ```
