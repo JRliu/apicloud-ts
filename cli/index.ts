@@ -1,9 +1,8 @@
 import * as yargs from 'yargs'
-import add from './command/add'
+import generate from './command/generate'
 
-// console.log(yargs)
 yargs
-    .command(add)
+    .command(generate)
     .option('p', {
         alias: 'page',
         default: false,

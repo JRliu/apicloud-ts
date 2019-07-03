@@ -4,6 +4,8 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": false,
+        // "esModuleInterop": true,
+        // "allowSyntheticDefaultImports": true,
         "alwaysStrict": true,
         "allowJs": true,
         "noUnusedLocals": true,
