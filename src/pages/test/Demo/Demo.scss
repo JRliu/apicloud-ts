@@ -4,3 +4,14 @@
  * @date 2019-07-04 22:25:16
  */
 @import "base/base";
+
+.test {
+    font-size: 30rpx;
+}
+
+.bg {
+    width: 100rpx;
+    height: 100rpx;
+    background-image: resolve("logo.png");
+    background-size: contain;
+}

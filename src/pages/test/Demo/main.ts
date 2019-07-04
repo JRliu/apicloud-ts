@@ -6,6 +6,7 @@
 
 import Vue from '@/components/base'
 import App from './Demo'
+import '@/style/app.scss'
 
 new Vue({
     render: h => h(App)

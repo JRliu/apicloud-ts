@@ -16,7 +16,7 @@ function getEntry() {
             filename: file
                 .replace(/src(\/|\\\\)/, '')
                 .replace(/(\/||\\\\)main\.ts/, '.html'),
-            template: 'public/index.html'
+            template: './src/tpl/index.html'
         }
         return item
     })
