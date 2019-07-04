@@ -5,7 +5,7 @@ const path = require('path')
 const _ = require('lodash')
 
 function getEntry() {
-    let globPath = 'src/**/index.ts'
+    let globPath = 'src/pages/**/main.ts'
     // (\/|\\\\) 这种写法是为了兼容 windows和 mac系统目录路径的不同写法
     // let pathDir = 'src(/|\\\\)(.*?)(/|\\\\)html'
     let files = glob.sync(globPath)
@@ -15,7 +15,7 @@ function getEntry() {
             entry: file,
             filename: file
                 .replace(/src(\/|\\\\)/, '')
-                .replace(/(\/||\\\\)index\.ts/, '.html'),
+                .replace(/(\/||\\\\)main\.ts/, '.html'),
             template: 'public/index.html'
         }
         return item

@@ -29,10 +29,13 @@ const command: yargs.CommandModule<{}, { [k: string]: string }> = {
             }
         }
 
-        // 读取模板文件
-        const files = fs.readdirSync(
-            path.join(__dirname, '../template/component')
+        const templateDir = path.join(
+            __dirname,
+            `../template/${isPage ? 'page' : 'component'}`
         )
+
+        // 读取模板文件
+        const files = fs.readdirSync(templateDir)
         files.forEach(file => {
             // 文件名（含后缀）
             let fileName = file
@@ -42,18 +45,8 @@ const command: yargs.CommandModule<{}, { [k: string]: string }> = {
 
             // 创建文件
             let content = fs
-                .readFileSync(
-                    path.join(__dirname, '../template/component', file)
-                )
+                .readFileSync(path.join(templateDir, file))
                 .toString()
-
-            if (fileName === 'index.ts' && isPage) {
-                content = fs
-                    .readFileSync(
-                        path.join(__dirname, '../template/page', file)
-                    )
-                    .toString()
-            }
 
             const replace = (
                 content: string,

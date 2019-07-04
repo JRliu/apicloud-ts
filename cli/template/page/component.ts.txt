@@ -1,18 +1,18 @@
 /**
- * Haha
- * @author jianrong <704834659@qq.com>
- * @date 2019-07-04 01:01:10
+ * ${componentName}
+ * @author ${username}
+ * @date ${curDate}
  */
 
 import Vue from '@/components/base'
 import { Component } from 'vue-property-decorator'
-import template from './Haha.vue'
+import template from './${componentName}.vue'
 
 @Component({
-    name: 'Haha',
+    name: '${componentName}',
     mixins: [template]
 })
-export default class Haha extends Vue {
+export default class ${componentName} extends Vue {
     // #region datas ******************************/
     // #endregion datas ***************************/
 

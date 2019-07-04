@@ -1,11 +1,11 @@
 /**
- * error
+ * Demo
  * @author jianrong <704834659@qq.com>
- * @date 2019-07-02 01:31:09
+ * @date 2019-07-04 22:25:16
  */
 
 import Vue from '@/components/base'
-import App from './error'
+import App from './Demo'
 
 new Vue({
     render: h => h(App)

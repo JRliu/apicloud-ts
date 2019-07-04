@@ -1,7 +1,7 @@
 /**
  * error
  * @author jianrong <704834659@qq.com>
- * @date 2019-07-02 01:31:09
+ * @date 2019-07-04 22:18:43
  */
 
 import Vue from '@/components/base'
@@ -29,9 +29,7 @@ export default class error extends Vue {
     // #endregion watchers ************************/
 
     // #region life cycle *************************/
-    protected created() {
-        alert('error')
-    }
+    protected created() {}
     // #endregion life cycle **********************/
 
     // #region hooks ******************************/

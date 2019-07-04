@@ -1,18 +1,18 @@
 /**
- * Demo
+ * Userinfo
  * @author jianrong <704834659@qq.com>
- * @date 2019-07-04 22:25:16
+ * @date 2019-07-04 22:25:46
  */
 
 import Vue from '@/components/base'
 import { Component } from 'vue-property-decorator'
-import template from './Demo.vue'
+import template from './Userinfo.vue'
 
 @Component({
-    name: 'Demo',
+    name: 'Userinfo',
     mixins: [template]
 })
-export default class Demo extends Vue {
+export default class Userinfo extends Vue {
     // #region datas ******************************/
     // #endregion datas ***************************/
 
