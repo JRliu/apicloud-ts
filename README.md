@@ -1,12 +1,14 @@
 # apicloud-ts
 
 ## TODO
-- [x] cli 新建组件
-- [ ] 启动开发服务、打包完成后，自动修改config.xml 的入口配置
-- [ ] 提取公共方法
-- [ ] cli 提取热更新包（根据两个提交的diff生成）
+
+-   [x] cli 新建组件
+-   [ ] 启动开发服务、打包完成后，自动修改 config.xml 的入口配置
+-   [ ] 提取公共方法
+-   [ ] cli 提取热更新包（根据两个提交的 diff 生成）
 
 ## Project setup
+
 ```
 // 基于vue-cli，请先全局安装vue-cli：
 yarn global add @vue/cli
@@ -34,6 +36,7 @@ yarn dev
 ```
 
 ## directory structure
+
 ```dir
 ├── README.md
 ├── babel.config.js
@@ -78,7 +81,7 @@ yarn dev
 │   │   └── logo.png
 │   ├── common   // 公共方法
 │   │   └── util.ts
-│   ├── components  // 存放组件
+│   ├── components  // 存放公共组件
 │   │   ├── Avatar
 │   │   │   ├── Avatar.scss
 │   │   │   ├── Avatar.ts
@@ -89,10 +92,16 @@ yarn dev
 │   ├── pages   // 存放页面，注意组件不要放进这个文件夹，组件请放 src/components
 │   │   └── test
 │   │       └── Demo
+│   │           ├── components  // 存放页面相关组件
+│   │           │   └── Avatar
+│   │           │       ├── Avatar.scss
+│   │           │       ├── Avatar.ts
+│   │           │       ├── Avatar.vue
+│   │           │       └── index.ts
 │   │           ├── Demo.scss
 │   │           ├── Demo.ts
 │   │           ├── Demo.vue
-│   │           └── index.ts
+│   │           └── main.ts
 │   ├── shims-tsx.d.ts
 │   ├── shims-vue.d.ts
 │   └── style
@@ -107,28 +116,33 @@ yarn dev
 ```
 
 ### cli
+
 ```
 // 新建页面
-yarn cli add src/pages/member/MemberDetail -p
+yarn cli gen src/pages/member/MemberDetail -p
 
 // 新建组件
-yarn cli add src/components/member/Avatar
+yarn cli gen src/components/member/Avatar
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 yarn dev
 ```
 
 ### Compiles and minifies for production
+
 ```
 yarn build
 ```
 
 ### Lints and fixes files
+
 ```
 yarn run lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
