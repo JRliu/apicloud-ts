@@ -1,6 +1,5 @@
 const glob = require('glob')
-const shelljs = require('shelljs')
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 const _ = require('lodash')
 
@@ -28,10 +27,6 @@ function getEntry() {
     return result
 }
 
-function shell(code) {
-    shelljs.exec(code, { stdio: 'inherit' })
-}
-
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
@@ -50,7 +45,10 @@ module.exports = {
                         async compilation => {
                             // wekpack 生成资源到 output 目录之后执行
                             // 复制config.json
-                            shell(`cp config.xml dist/config.xml`)
+                            fs.copyFileSync(
+                                path.resolve('./config.xml'),
+                                path.resolve('./dist/config.xml')
+                            )
                             // 修改config.xml的入口路径
                             const file = './dist/config.xml'
                             fs.readFile(file, 'utf8', function(err, data) {
