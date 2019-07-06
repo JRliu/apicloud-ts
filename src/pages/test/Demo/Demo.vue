@@ -1,12 +1,11 @@
 <!--
  * Demo
  * @author jianrong <704834659@qq.com>
- * @date 2019-07-04 22:25:16
+ * @date 2019-07-06 23:06:00
  -->
 <template>
     <div>
-        <h1 class="test">Demo</h1>
-        <div class="bg"></div>
+        <h1>Demo</h1>
     </div>
 </template>
 <style src="./Demo.scss" lang="scss" scoped></style>
