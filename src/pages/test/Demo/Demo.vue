@@ -5,7 +5,7 @@
  -->
 <template>
     <div>
-        <h1>Demo</h1>
+        <h1 @click="goError">Demo</h1>
     </div>
 </template>
 <style src="./Demo.scss" lang="scss" scoped></style>

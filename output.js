@@ -1,7 +1,7 @@
 {
-  mode: 'production',
-  context: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging',
-  devtool: 'source-map',
+  mode: 'development',
+  context: '/Users/liujianrong/Desktop/my-projects/apicloud-ts',
+  devtool: 'cheap-module-eval-source-map',
   node: {
     setImmediate: false,
     dgram: 'empty',
@@ -11,40 +11,41 @@
     child_process: 'empty'
   },
   output: {
-    path: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/dist',
-    filename: 'js/[name].[contenthash:8].js',
-    publicPath: '/widget://',
-    chunkFilename: 'js/[name].[contenthash:8].js'
+    path: '/Users/liujianrong/Desktop/my-projects/apicloud-ts/dist',
+    filename: '[name].js',
+    publicPath: '/',
+    globalObject: '(typeof self !== \'undefined\' ? self : this)'
   },
   resolve: {
     alias: {
-      '@': '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/src',
-      vue$: 'vue/dist/vue.runtime.esm.js'
+      '@': '/Users/liujianrong/Desktop/my-projects/apicloud-ts/src',
+      vue$: 'vue/dist/vue.runtime.esm.js',
+      config: '/Users/liujianrong/Desktop/my-projects/apicloud-ts/config/development.ts'
     },
     extensions: [
-      '.mjs',
+      '.tsx',
+      '.ts',
       '.js',
+      '.mjs',
       '.jsx',
       '.vue',
       '.json',
-      '.wasm',
-      '.ts',
-      '.tsx'
+      '.wasm'
     ],
     modules: [
       'node_modules',
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules',
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/@vue/cli-service/node_modules'
+      '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules',
+      '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/@vue/cli-service/node_modules'
     ]
   },
   resolveLoader: {
     modules: [
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/@vue/cli-plugin-typescript/node_modules',
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/@vue/cli-plugin-eslint/node_modules',
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/@vue/cli-plugin-babel/node_modules',
+      '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/@vue/cli-plugin-typescript/node_modules',
+      '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/@vue/cli-plugin-eslint/node_modules',
+      '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/@vue/cli-plugin-babel/node_modules',
       'node_modules',
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules',
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/@vue/cli-service/node_modules'
+      '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules',
+      '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/@vue/cli-service/node_modules'
     ]
   },
   module: {
@@ -57,8 +58,8 @@
           {
             loader: 'cache-loader',
             options: {
-              cacheDirectory: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/.cache/vue-loader',
-              cacheIdentifier: '0e59449d'
+              cacheDirectory: '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/.cache/vue-loader',
+              cacheIdentifier: '1136fee5'
             }
           },
           {
@@ -67,8 +68,8 @@
               compilerOptions: {
                 preserveWhitespace: false
               },
-              cacheDirectory: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/.cache/vue-loader',
-              cacheIdentifier: '0e59449d'
+              cacheDirectory: '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/.cache/vue-loader',
+              cacheIdentifier: '1136fee5'
             }
           }
         ]
@@ -174,10 +175,10 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -202,10 +203,10 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -228,10 +229,10 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -255,10 +256,10 @@
           {
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -287,10 +288,10 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -315,10 +316,10 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -341,10 +342,10 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -368,10 +369,10 @@
           {
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -400,10 +401,10 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -450,10 +451,10 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -488,7 +489,11 @@
                       String: function(){return b(c,this,Array.prototype.slice.apply(arguments))},
                       Error: function Error() { [native code] }
                     }
-                  }
+                  },
+                  includePaths: [
+                    '/Users/liujianrong/Desktop/my-projects/apicloud-ts/src/style',
+                    '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules'
+                  ]
                 }
               }
             ]
@@ -498,10 +503,10 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -547,10 +552,10 @@
           {
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -585,7 +590,11 @@
                       String: function(){return b(c,this,Array.prototype.slice.apply(arguments))},
                       Error: function Error() { [native code] }
                     }
-                  }
+                  },
+                  includePaths: [
+                    '/Users/liujianrong/Desktop/my-projects/apicloud-ts/src/style',
+                    '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules'
+                  ]
                 }
               }
             ]
@@ -601,10 +610,10 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -652,10 +661,10 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -701,10 +710,10 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -751,10 +760,10 @@
           {
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -806,10 +815,10 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -840,10 +849,10 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -872,10 +881,10 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -905,10 +914,10 @@
           {
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -943,10 +952,10 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -978,10 +987,10 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -1011,10 +1020,10 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -1045,10 +1054,10 @@
           {
             use: [
               {
-                loader: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/mini-css-extract-plugin/dist/loader.js',
+                loader: 'vue-style-loader',
                 options: {
-                  hmr: false,
-                  publicPath: '../'
+                  sourceMap: false,
+                  shadowMode: false
                 }
               },
               {
@@ -1085,12 +1094,9 @@
           {
             loader: 'cache-loader',
             options: {
-              cacheDirectory: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/.cache/babel-loader',
-              cacheIdentifier: '075b22ef'
+              cacheDirectory: '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/.cache/babel-loader',
+              cacheIdentifier: '2c54da22'
             }
-          },
-          {
-            loader: 'thread-loader'
           },
           {
             loader: 'babel-loader'
@@ -1103,7 +1109,7 @@
         test: /\.(vue|(j|t)sx?)$/,
         exclude: [
           /node_modules/,
-          '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/@vue/cli-service/lib'
+          '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/@vue/cli-service/lib'
         ],
         use: [
           {
@@ -1117,10 +1123,10 @@
                 '.tsx'
               ],
               cache: true,
-              cacheIdentifier: '0752b140',
+              cacheIdentifier: '4c6dbb23',
               emitWarning: true,
               emitError: false,
-              eslintPath: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/eslint/lib/api.js',
+              eslintPath: '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/eslint/lib/api.js',
               formatter: function () { /* omitted long function */ }
             }
           }
@@ -1133,12 +1139,9 @@
           {
             loader: 'cache-loader',
             options: {
-              cacheDirectory: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/.cache/ts-loader',
-              cacheIdentifier: '17645579'
+              cacheDirectory: '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/.cache/ts-loader',
+              cacheIdentifier: 'b8d302f0'
             }
-          },
-          {
-            loader: 'thread-loader'
           },
           {
             loader: 'babel-loader'
@@ -1150,7 +1153,7 @@
               appendTsSuffixTo: [
                 '\\.vue$'
               ],
-              happyPackMode: true
+              happyPackMode: false
             }
           }
         ]
@@ -1162,12 +1165,9 @@
           {
             loader: 'cache-loader',
             options: {
-              cacheDirectory: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/node_modules/.cache/ts-loader',
-              cacheIdentifier: '17645579'
+              cacheDirectory: '/Users/liujianrong/Desktop/my-projects/apicloud-ts/node_modules/.cache/ts-loader',
+              cacheIdentifier: 'b8d302f0'
             }
-          },
-          {
-            loader: 'thread-loader'
           },
           {
             loader: 'babel-loader'
@@ -1176,7 +1176,7 @@
             loader: 'ts-loader',
             options: {
               transpileOnly: true,
-              happyPackMode: true,
+              happyPackMode: false,
               appendTsxSuffixTo: [
                 '\\.vue$'
               ]
@@ -1186,75 +1186,6 @@
       }
     ]
   },
-  optimization: {
-    minimizer: [
-      {
-        options: {
-          test: /\.m?js(\?.*)?$/i,
-          chunkFilter: () => true,
-          warningsFilter: () => true,
-          extractComments: false,
-          sourceMap: true,
-          cache: true,
-          cacheKeys: defaultCacheKeys => defaultCacheKeys,
-          parallel: true,
-          include: undefined,
-          exclude: undefined,
-          minify: undefined,
-          terserOptions: {
-            output: {
-              comments: /^\**!|@preserve|@license|@cc_on/i
-            },
-            compress: {
-              arrows: false,
-              collapse_vars: false,
-              comparisons: false,
-              computed_props: false,
-              hoist_funs: false,
-              hoist_props: false,
-              hoist_vars: false,
-              inline: false,
-              loops: false,
-              negate_iife: false,
-              properties: false,
-              reduce_funcs: false,
-              reduce_vars: false,
-              switches: false,
-              toplevel: false,
-              typeofs: false,
-              booleans: true,
-              if_return: true,
-              sequences: true,
-              unused: true,
-              conditionals: true,
-              dead_code: true,
-              evaluate: true
-            },
-            mangle: {
-              safari10: true
-            }
-          }
-        }
-      }
-    ],
-    splitChunks: {
-      cacheGroups: {
-        vendors: {
-          name: 'chunk-vendors',
-          test: /[\\\/]node_modules[\\\/]/,
-          priority: -10,
-          chunks: 'initial'
-        },
-        common: {
-          name: 'chunk-common',
-          minChunks: 2,
-          priority: -20,
-          chunks: 'initial',
-          reuseExistingChunk: true
-        }
-      }
-    }
-  },
   plugins: [
     /* config.plugin('vue-loader') */
     new VueLoaderPlugin(),
@@ -1262,8 +1193,8 @@
     new DefinePlugin(
       {
         'process.env': {
-          NODE_ENV: '"production"',
-          BASE_URL: '"/widget://"'
+          NODE_ENV: '"development"',
+          BASE_URL: '"/"'
         }
       }
     ),
@@ -1280,116 +1211,34 @@
         ]
       }
     ),
-    /* config.plugin('extract-css') */
-    new MiniCssExtractPlugin(
-      {
-        filename: 'css/[name].[contenthash:8].css',
-        chunkFilename: 'css/[name].[contenthash:8].css'
-      }
-    ),
-    /* config.plugin('optimize-css') */
-    new OptimizeCssnanoPlugin(
-      {
-        sourceMap: false,
-        cssnanoOptions: {
-          preset: [
-            'default',
-            {
-              mergeLonghand: false,
-              cssDeclarationSorter: false
-            }
-          ]
-        }
-      }
-    ),
-    /* config.plugin('hash-module-ids') */
-    new HashedModuleIdsPlugin(
-      {
-        hashDigest: 'hex'
-      }
-    ),
-    /* config.plugin('named-chunks') */
-    new NamedChunksPlugin(
-      function () { /* omitted long function */ }
-    ),
+    /* config.plugin('hmr') */
+    new HotModuleReplacementPlugin(),
+    /* config.plugin('progress') */
+    new ProgressPlugin(),
     /* config.plugin('html-0') */
     new HtmlWebpackPlugin(
       {
         templateParameters: function () { /* omitted long function */ },
-        minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-          collapseBooleanAttributes: true,
-          removeScriptTypeAttributes: true
-        },
         chunks: [
           'chunk-vendors',
           'chunk-common',
           '0'
         ],
-        template: 'public/index.html',
-        filename: 'pages/error/error.html'
+        template: './src/tpl/index.html',
+        filename: 'pages/error/Error.html'
       }
     ),
     /* config.plugin('html-1') */
     new HtmlWebpackPlugin(
       {
         templateParameters: function () { /* omitted long function */ },
-        minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-          collapseBooleanAttributes: true,
-          removeScriptTypeAttributes: true
-        },
         chunks: [
           'chunk-vendors',
           'chunk-common',
           '1'
         ],
-        template: 'public/index.html',
-        filename: 'pages/login/index.html'
-      }
-    ),
-    /* config.plugin('html-2') */
-    new HtmlWebpackPlugin(
-      {
-        templateParameters: function () { /* omitted long function */ },
-        minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-          collapseBooleanAttributes: true,
-          removeScriptTypeAttributes: true
-        },
-        chunks: [
-          'chunk-vendors',
-          'chunk-common',
-          '2'
-        ],
-        template: 'public/index.html',
-        filename: 'pages/member/coupon.html'
-      }
-    ),
-    /* config.plugin('html-3') */
-    new HtmlWebpackPlugin(
-      {
-        templateParameters: function () { /* omitted long function */ },
-        minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeAttributeQuotes: true,
-          collapseBooleanAttributes: true,
-          removeScriptTypeAttributes: true
-        },
-        chunks: [
-          'chunk-vendors',
-          'chunk-common',
-          '3'
-        ],
-        template: 'public/index.html',
-        filename: 'pages/member/index.html'
+        template: './src/tpl/index.html',
+        filename: 'pages/test/Demo.html'
       }
     ),
     /* config.plugin('preload-0') */
@@ -1397,7 +1246,7 @@
       {
         rel: 'preload',
         includeHtmlNames: [
-          'pages/error/error.html'
+          'pages/error/Error.html'
         ],
         include: {
           type: 'initial',
@@ -1416,7 +1265,7 @@
       {
         rel: 'prefetch',
         includeHtmlNames: [
-          'pages/error/error.html'
+          'pages/error/Error.html'
         ],
         include: {
           type: 'asyncChunks',
@@ -1431,7 +1280,7 @@
       {
         rel: 'preload',
         includeHtmlNames: [
-          'pages/login/index.html'
+          'pages/test/Demo.html'
         ],
         include: {
           type: 'initial',
@@ -1450,7 +1299,7 @@
       {
         rel: 'prefetch',
         includeHtmlNames: [
-          'pages/login/index.html'
+          'pages/test/Demo.html'
         ],
         include: {
           type: 'asyncChunks',
@@ -1460,98 +1309,13 @@
         }
       }
     ),
-    /* config.plugin('preload-2') */
-    new PreloadPlugin(
-      {
-        rel: 'preload',
-        includeHtmlNames: [
-          'pages/member/coupon.html'
-        ],
-        include: {
-          type: 'initial',
-          entries: [
-            '2'
-          ]
-        },
-        fileBlacklist: [
-          /\.map$/,
-          /hot-update\.js$/
-        ]
-      }
-    ),
-    /* config.plugin('prefetch-2') */
-    new PreloadPlugin(
-      {
-        rel: 'prefetch',
-        includeHtmlNames: [
-          'pages/member/coupon.html'
-        ],
-        include: {
-          type: 'asyncChunks',
-          entries: [
-            '2'
-          ]
-        }
-      }
-    ),
-    /* config.plugin('preload-3') */
-    new PreloadPlugin(
-      {
-        rel: 'preload',
-        includeHtmlNames: [
-          'pages/member/index.html'
-        ],
-        include: {
-          type: 'initial',
-          entries: [
-            '3'
-          ]
-        },
-        fileBlacklist: [
-          /\.map$/,
-          /hot-update\.js$/
-        ]
-      }
-    ),
-    /* config.plugin('prefetch-3') */
-    new PreloadPlugin(
-      {
-        rel: 'prefetch',
-        includeHtmlNames: [
-          'pages/member/index.html'
-        ],
-        include: {
-          type: 'asyncChunks',
-          entries: [
-            '3'
-          ]
-        }
-      }
-    ),
-    /* config.plugin('copy') */
-    new CopyWebpackPlugin(
-      [
-        {
-          from: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/public',
-          to: '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/dist',
-          toType: 'dir',
-          ignore: [
-            '.DS_Store',
-            'public/index.html',
-            'public/index.html',
-            'public/index.html',
-            'public/index.html'
-          ]
-        }
-      ]
-    ),
     /* config.plugin('fork-ts-checker') */
     new ForkTsCheckerWebpackPlugin(
       {
         vue: true,
         tslint: false,
         formatter: 'codeframe',
-        checkSyntacticErrors: true
+        checkSyntacticErrors: false
       }
     ),
     {
@@ -1560,16 +1324,10 @@
   ],
   entry: {
     '0': [
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/src/pages/error/error/index.ts'
+      '/Users/liujianrong/Desktop/my-projects/apicloud-ts/src/pages/error/Error/main.ts'
     ],
     '1': [
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/src/pages/login/index/index.ts'
-    ],
-    '2': [
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/src/pages/member/coupon/index.ts'
-    ],
-    '3': [
-      '/Users/liujianrong/Desktop/my-projects/apicloud-staging/apicloud-staging/src/pages/member/index/index.ts'
+      '/Users/liujianrong/Desktop/my-projects/apicloud-ts/src/pages/test/Demo/main.ts'
     ]
   }
 }

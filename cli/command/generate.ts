@@ -8,7 +8,7 @@ import getGitUser from '../util/getGitUser'
 
 const command: yargs.CommandModule<{}, { [k: string]: string }> = {
     command: [`gen <path>`],
-    describe: '新建组件，-p || --page则新建页面',
+    describe: '新建组件，-p 或 --page则新建页面',
     async handler(args) {
         const list = args.path.split('/')
         const componentName = list[list.length - 1]

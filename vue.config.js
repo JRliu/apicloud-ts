@@ -33,8 +33,8 @@ function resolve(dir) {
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-module.exports = {
-    publicPath: isProduction ? 'widget://' : '/',
+const config = {
+    publicPath: isProduction ? '../../' : '/',
     pages: getEntry(),
     configureWebpack: {
         plugins: [
@@ -44,64 +44,51 @@ module.exports = {
                         'AfterEmitPlugin',
                         async compilation => {
                             // wekpack 生成资源到 output 目录之后执行
-                            // 复制config.json
-                            fs.copyFileSync(
-                                path.resolve('./config.xml'),
-                                path.resolve('./dist/config.xml')
-                            )
-                            // 修改config.xml的入口路径
-                            const file = './dist/config.xml'
-                            fs.readFile(file, 'utf8', function(err, data) {
-                                if (err) {
-                                    return console.log(err)
-                                }
-                                var result = data.replace(
-                                    /<content src=".*\.html"/g,
-                                    `<content src="./pages/login/index.html"`
-                                )
-
-                                fs.writeFile(file, result, 'utf8', function(
-                                    err
-                                ) {
-                                    if (err) return console.log(err)
-                                })
-                            })
                         }
                     )
                 }
-            },
-            // 批量把生成的html里的‘/widget://’替换为‘widget://’ (把vue-cli在publicPath前加的'/'去掉！)
-            {
-                apply: compiler => {
-                    compiler.plugin('compilation', compilation => {
-                        compilation.plugin(
-                            'html-webpack-plugin-after-html-processing',
-                            htmlPluginData => {
-                                const tier =
-                                    htmlPluginData.outputName.split('/')
-                                        .length - 1
-
-                                htmlPluginData.html = htmlPluginData.html.replace(
-                                    /\/widget:\/\//g,
-                                    '../'.repeat(tier)
-                                )
-                                return htmlPluginData
-                            }
-                        )
-                    })
-                }
             }
+            // 批量把生成的html里的‘/widget://’替换为‘widget://’ (把vue-cli在publicPath前加的'/'去掉！)
+            // {
+            //     apply: compiler => {
+            //         compiler.plugin('compilation', compilation => {
+            //             compilation.plugin(
+            //                 'html-webpack-plugin-after-html-processing',
+            //                 htmlPluginData => {
+            //                     const tier =
+            //                         htmlPluginData.outputName.split('/')
+            //                             .length - 1
+
+            //                     htmlPluginData.html = htmlPluginData.html.replace(
+            //                         /\/widget:\/\//g,
+            //                         '../'.repeat(tier)
+            //                     )
+            //                     return htmlPluginData
+            //                 }
+            //             )
+            //         })
+            //     }
+            // }
         ]
     },
     chainWebpack: config => {
+        // config.resolve.modules.add(resolve('src'))
+        config.resolve.alias.set('@', resolve('./src'))
+
         // ts 文件提升到最高
         config.resolve.extensions
             .prepend('.js')
             .prepend('.ts')
             .prepend('.tsx')
 
+        config.resolve.alias.set(
+            'config',
+            path.resolve(__dirname, `config/${process.env.NODE_ENV}.ts`)
+        )
+
         // scss 模块
         let includePaths = [resolve('./src/style'), resolve('./node_modules')]
+
         config.module
             .rule('scss')
             .oneOf('normal')
@@ -123,3 +110,12 @@ module.exports = {
             })
     }
 }
+// let _publicPath = isProduction ? '/' : '/'
+// Object.defineProperty(config, 'publicPath', {
+//     set: function (val) { },
+//     get: function () {
+//         return _publicPath
+//     }
+// })
+
+module.exports = config

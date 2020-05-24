@@ -1,6 +1,8 @@
 {
     "singleQuote": true,
     "semi": false,
+    "trailingComma": "none",
+    "spaceBeforeFunctionParen": true,
     "tabWidth": 4,
     "overrides": [
         {

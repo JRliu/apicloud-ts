@@ -7,6 +7,8 @@
 import Vue from '@/components/base'
 import { Component } from 'vue-property-decorator'
 import template from './Demo.vue'
+import config from 'config'
+import * as util from '@/common/util'
 
 @Component({
     name: 'Demo',
@@ -29,7 +31,10 @@ export default class Demo extends Vue {
     // #endregion watchers ************************/
 
     // #region life cycle *************************/
-    protected created() {}
+    protected created() {
+        console.log('config', config)
+        console.log('util', util)
+    }
     // #endregion life cycle **********************/
 
     // #region hooks ******************************/
@@ -39,5 +44,11 @@ export default class Demo extends Vue {
     // #endregion event handler *******************/
 
     // #region methods ****************************/
+    protected goError() {
+        api.openWin({
+            name: 'haha',
+            url: '../error/Error.html'
+        })
+    }
     // #endregion methods *************************/
 }

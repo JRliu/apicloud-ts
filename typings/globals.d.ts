@@ -11,3 +11,11 @@ declare module 'vue/types/vue' {
         test: string
     }
 }
+
+declare module 'config' {
+    import config from 'config/development'
+
+    export default config
+}
+
+type tt = Types.PlainObject

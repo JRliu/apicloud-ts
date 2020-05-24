@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "vue-cli-service serve",
-        "build": "vue-cli-service build",
+        "build": "vue-cli-service build && yarn cli copy-config",
         "lint": "vue-cli-service lint",
         "start-wifi": "apicloud wifiStart --port 8686",
         "sync": "apicloud wifiSync --project ./ --updateAll false --port 8686",
@@ -16,7 +16,7 @@
         "core-js": "^2.6.5",
         "dayjs": "^1.8.14",
         "normalize.css": "^8.0.1",
-        "vue": "^2.6.10",
+        "vue": "2.6.11",
         "vue-property-decorator": "^8.2.1"
     },
     "devDependencies": {
@@ -44,7 +44,7 @@
         "sass-loader": "^7.1.0",
         "ts-node": "^8.3.0",
         "typescript": "^3.4.3",
-        "vue-template-compiler": "^2.6.10",
+        "vue-template-compiler": "^2.6.11",
         "yargs": "^13.2.4"
     }
 }
